@@ -1,32 +1,40 @@
 @charset "UTF-8";
 
-$main_color: orange;
-body {
-  width: 100%;
+article {
+  width: 60%;
   height: 100vh;
-  text-align: center;
-}
-main{
-  width: 100%;
-}
-.welcome {
-  width: 100%;
-  color: white;
-  background-color: $main_color;
-  padding: 10px;
-  margin-bottom: 50px;
-}
-div {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  p {
-    margin-bottom: 20px;
+  #google-map-wrapper {
+    width: 100%;
+    height: 75vh;
+    border: solid red 1px;
+  }
+  #google-map-area {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  #google-map-opt {
+    width: 100%;
+    height: 25vh;
+    overflow-y: scroll;
+    padding: 10px;
   }
 }
-input[type="text"] {
+select {
   border: solid gray 1px;
-  background-color: white;
-  text-align: left;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+dd {
+  margin-bottom: 10px;
+}
+// ボックスだけ残す
+.hidden {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+// ボックスごと消す
+.none {
+  display: none;
 }
