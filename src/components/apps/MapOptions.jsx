@@ -1,9 +1,8 @@
 import React from 'react';
-import {Store} from '../../Store';
+import { Store } from '../../Store';
 
 const MapOptions = () => {
   const {state, dispatch} = React.useContext(Store);
-  console.log(state);
 
   const handleChange = e => dispatch({type: e.target.name, value: e.target.value});
 
@@ -13,7 +12,7 @@ const MapOptions = () => {
       <form id="mapOption">
         <dl>
           <dt>地図の種類</dt>
-          <dd><select name="mapTypeId" onChange={handleChange}>
+          <dd><select name="mapTypeId" id="mapTypeId" onChange={handleChange}>
             <option value="roadmap">ROADMAP</option>
             <option value="satellite">SATELLITE</option>
             <option value="hybrid">HYBRID</option>
@@ -95,11 +94,11 @@ const MapOptions = () => {
             </label>
             <label>false:&nbsp;
               <input
-              type="radio"
-              name="zoomControl"
-              value="false"
-              onChange={handleChange}
-              checked={!state.zoomControl}
+                type="radio"
+                name="zoomControl"
+                value="false"
+                onChange={handleChange}
+                checked={!state.zoomControl}
               />
             </label>
           </dd>

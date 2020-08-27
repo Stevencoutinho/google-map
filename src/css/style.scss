@@ -1,32 +1,7 @@
 @charset "UTF-8";
-
-article {
-  width: 60%;
+/* common */ 
+.box {
   height: 100vh;
-  #google-map-wrapper {
-    width: 100%;
-    height: 75vh;
-    border: solid red 1px;
-  }
-  #google-map-area {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-  }
-  #google-map-opt {
-    width: 100%;
-    height: 25vh;
-    overflow-y: scroll;
-    padding: 10px;
-  }
-}
-select {
-  border: solid gray 1px;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-dd {
-  margin-bottom: 10px;
 }
 // ボックスだけ残す
 .hidden {
@@ -37,4 +12,176 @@ dd {
 // ボックスごと消す
 .none {
   display: none;
+}
+select {
+  border: solid gray 1px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+dd {
+  margin-bottom: 10px;
+}
+.my-parts {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+  position:absolute;
+  top: 3px;
+  right: 3px;
+	cursor: pointer;
+}
+.my-parts span::before,
+.my-parts span::after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 84%;
+	height: 16%;
+	margin: -8% 0 0 -42%;
+	background: #555;
+}
+.my-parts span::before {
+	transform: rotate(-45deg);
+}
+.my-parts span::after {
+	transform: rotate(45deg);
+}
+.wrapper {
+  position: relative;
+}
+.pin {
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/marker.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: -50px;
+  left: -25px;
+}
+.balloon {
+  position: absolute;
+  z-index: 100;
+  display: inline-block;
+  top: 15px;
+  left: -60px;
+  padding: 5px;
+  width: 120px;
+  min-height: 120px;
+  color: #555;
+  font-size: 13px;
+  background: #e0edff;
+  border-radius: 15px;
+  a {
+    color: #555;
+    text-align: center;
+  }
+  p {
+    width: 80%;
+  }
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border: 16px solid transparent;
+  border-bottom: 15px solid #e0edff;
+}
+
+// .pin{
+//   position: relative;
+//   width: 20px;
+//   height: 20px;
+//   border-radius: 20px;
+//   background: #e95464;
+//   &:before{
+//     //赤い三角の部分
+//     position: absolute;
+//     bottom: -7px;
+//     border: solid transparent;
+//     border-top-color: #e95464;
+//     border-width: 15px 10px 0 10px;
+//     content: ' ';
+//   }
+//   &:after{
+//     //白丸の部分
+//     position: absolute;
+//     top: 5px;
+//     left: 5px;
+//     width: 10px;
+//     height: 10px;
+//     border-radius: 10px;
+//     background: #fff;
+//     content: ' ';
+//   }
+// }
+
+/* styled */
+main {
+  display: flex;
+}
+#leftBox {
+  width: 60%;
+  border-right: solid gray 1px;
+  #google-map-wrapper,
+  #google-map-opt {
+    width: 100%;
+  }
+  #google-map-wrapper {
+    height: 65vh;
+  }
+  #weather {
+    height: 10vh;
+    background-color: rgb(204, 204, 204);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    div {
+      display: flex;
+      flex-flow: nowrap;
+      align-items: center;
+    }
+  }
+  #google-map-opt {
+    height: 25vh;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+}
+#rightBox {
+  width: 40%;
+  #search {
+    height: 45%;
+  }
+  #result {
+    width: 100%;
+    height: 55%;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+  #hotelSearch {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-bottom: solid gray 1px;
+    padding: 5px;
+    h3 {
+      margin-bottom: 5px;
+    }
+    dt {
+      text-align: left;
+    }
+    select {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
 }
