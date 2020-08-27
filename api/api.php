@@ -23,7 +23,7 @@ else if(array_key_exists('l_area', $_GET)) {
   $url = BASE_URL . "&l_area=" . $_GET['l_area'];
 }
 else if(array_key_exists('s_area', $_GET)) {
-  $url = "http://jws.jalan.net/APILite/HotelSearch/V1/?". KEY ."&s_area=" . $_GET['s_area'];
+  $url = "http://jws.jalan.net/APILite/HotelSearch/V1/?key=". KEY ."&s_area=" . $_GET['s_area'];
 }
 
 // XML取得
