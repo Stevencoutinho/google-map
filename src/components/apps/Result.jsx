@@ -5,7 +5,7 @@ import { Store } from '../../Store';
 
 const Result = () => {
   const {state, dispatch} = React.useContext(Store);
-  // console.log(state)
+
   return (
     <>
     {state.result.map(e => (

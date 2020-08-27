@@ -1,4 +1,6 @@
+/* node_modules */
 import React from 'react';
+/* Store */
 import { Store } from '../../Store';
 
 const MapOptions = () => {
