@@ -2,8 +2,6 @@
 import React from 'react';
 /* API_KEY */
 import { WEATHER_KEY, WEATHER_URL } from '../../API';
-/* Store */
-import { Store } from '../../Store';
 
 const Weather = ({latlng}) => {
   /* State */
