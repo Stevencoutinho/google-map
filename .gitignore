@@ -1,3 +1,4 @@
 /node_modules
 /public
+/api/config.php
 /src/API.js
