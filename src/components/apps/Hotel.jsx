@@ -62,16 +62,18 @@ const Hotel = ({onChange}) => {
 
         Array.from(xml.getElementsByTagName('Hotel')).map(e => {
           promises.push(promiseFunc(e.children[3].textContent));
+
           ary.push({
             id: e.children[0].textContent,
-            name: e.children[1].textContent,
+            name: e.children[1].textContent.replace(/<BR>/g, ''),
             url: e.children[6].textContent,
-            catchcopy: e.children[7].textContent,
-            caption: e.children[8].textContent,
+            catchcopy: e.children[7].textContent.replace(/<BR>/g, ''),
+            caption: e.children[8].textContent.replace(/<BR>/g, ''),
             img: e.children[9].textContent,
             area: e.children[4].children[3].textContent
           });
         });
+        console.log(ary);
         Promise.all(promises)
           .then(val => {
             let latlng = [];

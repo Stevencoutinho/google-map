@@ -76,7 +76,7 @@ dd {
   background: #e0edff;
   border-radius: 15px;
   a {
-    color: #555;
+    color: rgb(240, 136, 26);
     text-align: center;
   }
   p {
@@ -159,13 +159,31 @@ main {
 #rightBox {
   width: 40%;
   #search {
-    height: 45%;
+    height: 45vh;
   }
   #result {
     width: 100%;
-    height: 55%;
-    box-sizing: border-box;
-    overflow: scroll;
+    height: 55vh;
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 10px;
+    section {
+      // width: 100%;
+      margin-bottom: 20px;
+      p, h3, dt, dd {
+        margin-bottom: 5px;
+      }
+      img {
+        width: 100%;
+      }
+      a {
+        color: rgb(240, 136, 26);
+      }
+    }
   }
   #hotelSearch {
     width: 100%;
